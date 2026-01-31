@@ -1,1 +1,6 @@
-learn-mlflow/mlflow.db
+mlflow.db
+mlruns/
+mlartifacts/
+.venv/
+*.pyc
+__pycache__/
