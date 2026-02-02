@@ -1,0 +1,32 @@
+Setup Python3.12 -- Code Work on python 3.12 only
+brew install python@3.12
+
+/opt/homebrew/opt/python@3.12/bin/python3.12 -m venv .venv
+source .venv/bin/activate
+
+Install dependencies:
+pip3 install -r requirements.txt
+
+Train Model:
+python3 train.py 
+
+Test Model:
+python3 test.py --input "[5.1, 3.5, 1.4, 0.2]"
+
+Deactivate venv:
+deactivate
+
+Start API for Application:
+python3 app.py
+
+Test Model in Application:
+curl -X POST "http://127.0.0.1:5001/predict" -H "Content-Type: application/json" -d '{"features":[5.1,3.5,1.4,0.2]}'
+
+Dockerize Model:
+docker build -t mlops:1.0.0 .
+
+Run Dockerize Model:
+docker run -itd -p 5001:5001 mlops:1.0.0
+
+Test Dockerize Model:
+curl -X POST "http://127.0.0.1:5001/predict" -H "Content-Type: application/json" -d '{"features":[5.1,3.5,1.4,0.2]}'

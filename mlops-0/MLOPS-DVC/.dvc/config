@@ -1,0 +1,4 @@
+[core]
+    remote = wine
+['remote "wine"']
+    url = s3://nk-dvc-001

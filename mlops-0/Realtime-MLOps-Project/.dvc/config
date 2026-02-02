@@ -1,0 +1,4 @@
+[core]
+    remote = churn_model
+['remote "churn_model"']
+    url = s3://nk-dvc-001

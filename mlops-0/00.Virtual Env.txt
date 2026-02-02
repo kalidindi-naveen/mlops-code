@@ -1,0 +1,11 @@
+Install PAcakges different versions
+
+Code Work on python 3.12 only
+/opt/homebrew/opt/python@3.12/bin/python3.12 -m venv .venv
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+(.venv) /Users/naveenkalidindi/Desktop/Python/Virtual Env % pip3 install -r requirements.txt
+
+deactivate

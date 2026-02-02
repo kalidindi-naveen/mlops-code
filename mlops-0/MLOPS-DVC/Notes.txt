@@ -1,0 +1,38 @@
+Setup Python3.12 -- Code Work on python 3.12 only
+brew install python@3.12
+
+/opt/homebrew/opt/python@3.12/bin/python3.12 -m venv .venv
+source .venv/bin/activate
+
+Install dependencies:
+pip3 install dvc dvc_s3
+
+Initilize DVC:
+dvc init 
+
+Add CSV to DVC:
+dvc add data/wine.csv
+- generate .dvc file, push to git
+
+Create AWS s3 bucket: 
+nk-dvc-001
+
+Set Remote for DVC:
+dvc remote add -d wine s3://nk-dvc-001
+
+Configure AWS Cred's:
+aws configure
+export key's
+
+Push Dataset -- DVC:
+dvc push
+
+Push Code:
+git add .
+git commit -m "Updated DVC"
+git push origin main
+
+Pull DVC:
+dvc pull
+
+How other Developers Know S3?? .dvc/config file
